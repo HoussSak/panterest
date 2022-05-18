@@ -87,4 +87,16 @@ class PinsController extends AbstractController
             'form'=>$form->createView(),'pin'=>$pin
         ]);
     }
+
+
+    /**
+     * @Route("/pins/{id<[0-9]+>}/delete", name="app_pins_delete")
+     */
+    public function delete(Pin $pin,EntityManagerInterface $em): Response
+    {
+        $em->remove($pin);
+        $em->flush();
+
+        return $this->redirectToRoute("app_home");
+    }
 }
