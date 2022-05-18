@@ -3,7 +3,9 @@
 {% block title %}Pinterest{% endblock %}
 
 {% block body %}
-<h1> {{ pluralize(pins |length,'Pin','Pins') }}</h1>
+    {{ parent() }}
+
+    <h1> {{ pluralize(pins |length,'Pin','Pins') }}</h1>
 
     {% for pin in pins %}
     <article>
