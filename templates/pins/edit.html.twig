@@ -4,11 +4,13 @@
 
 
 {% block body %}
-    {{ parent() }}
-
+<div class="row">
+    <div class="col-md-6 mx-auto">
     <h1>Edit a pin</h1>
 
     {{ include('pins/_form.html.twig',{submitButton : 'Update Pin'}) }}
+    </div>
+</div>
 
 
 {% endblock %}
